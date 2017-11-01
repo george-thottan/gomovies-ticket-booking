@@ -1,0 +1,8 @@
+<div><h1>Currently Playing</h1></div>
+<div>
+	{{#each results}}
+	<div style="width: 100px; float:left; height:100px;margin:20px">
+		<img src="http://localhost:3000/img/uploads/{{img}}" alt="Smiley face" height="42" width="42">
+	</div>
+	{{/each}}
+</div>

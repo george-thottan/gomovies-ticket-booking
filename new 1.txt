@@ -1,0 +1,4 @@
+npm init (entry point : .js file)
+npm install --save express
+create .gitignore
+create server.js(entry point)

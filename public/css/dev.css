@@ -1,0 +1,185 @@
+html,body
+{
+
+	width:100%;
+	height: 100%;
+  	margin: 0;
+	padding: 0;  
+}
+
+
+.container
+{
+	width: 100%;
+	height: 100%;
+}
+
+header
+{
+	
+    margin: 0;
+    padding: 0;
+    background-color: black;
+	
+}
+footer
+{
+	margin:0;
+	padding:0;
+	background-color:#2B3137;
+}
+
+header ul
+{
+	margin: 0;
+	list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+	
+}
+
+footer ul
+{
+	margin: 0;
+	list-style-type: none;
+    overflow: hidden;
+    padding: 0;
+}
+
+header ul li
+{
+	padding-right : 16px;
+}
+
+.footer_content
+{
+		
+		max-width: 1000px;
+		margin: 0 auto;
+}
+.foot_logo
+{
+	text-align: center;
+}
+.foot_logo_dim
+{
+	height: 60px;
+	width: 370px;
+	padding-right:110px;
+	padding-top:50px;
+	padding-bottom:50px;
+}
+.footer_doc
+{
+	border: none;
+    padding: 12px 16px;
+	float: left;
+    text-decoration: none;
+    display: inline-block;
+}
+.footer_doc ul
+{
+	list-style-type: none;
+    color: white;
+	
+}
+.footer_doc ul li
+{
+	padding-top:15px;
+	font-family: 'Source Sans Pro', 'Lucida Grande', sans-serif;
+}
+.opt
+{
+	
+    border: none;
+    color: white;
+    padding: 12px 16px;
+	 text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+.opt:hover {
+    text-decoration: underline;
+	
+}
+
+.logo1
+{
+		float:left;
+		padding-top:4px;
+		padding-left:15px;
+				
+}
+
+.logo_dim
+{
+		height:35px;
+		width:200px;
+}
+
+article
+{
+	max-width : 1000px;
+	margin : 0 auto;
+}
+
+.movie_register_details
+{
+	width : 700px;
+	margin: 0 auto;
+    max-width: 100%;
+	margin-top: 60px;
+	
+    display: block;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+input[type=text]
+{
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+input[type=submit]
+{
+	width: 35%;
+	background-color: #00ccff;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	border : 2px solid #00ccff;
+}
+input[type=submit]:hover
+{
+	background-color: white;
+	color : #00ccff;
+	border : 2px solid #00ccff;
+	font-weight: bold;
+}
+
+.movie_register_details textarea
+{
+	width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
+	
+}
+
+.movie_register_form
+{
+	margin-top:50px;
+}

@@ -1,0 +1,17 @@
+{
+  "name": "gomovies",
+  "version": "1.0.0",
+  "description": "movies and stuff",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-fileupload": "^0.2.0",
+    "express-session": "^1.15.6",
+    "express3-handlebars": "^0.5.2"
+  }
+}

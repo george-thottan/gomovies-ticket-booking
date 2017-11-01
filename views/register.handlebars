@@ -1,0 +1,74 @@
+			<header>
+				<ul>
+					<li class="logo1"><a href="http://localhost:3000"><img class="logo_dim" border="0" alt="GoMovie" src="img\logo.png"></a></li>
+				</ul>
+			</header>
+			<article>
+				<div class="auth">
+					<div class="login">
+						<h1>Log In</h1>
+						<hr/>
+						<br/>
+						<form 
+							ref='usersignin'
+							id='usersignin'
+							method='post'
+							action="http://localhost:3000/signin">
+							<label for="email">E-mail</label>
+							<input type="text" id="s_email" name="s_email" placeholder="E-mail..">
+							<label for="lname">Password</label>
+							<input type="password" id="s_pass" name="s_pass" placeholder="Password">
+							<input type="submit" value="LOGIN">
+						</form>
+						<br/>
+						<hr/>
+					</div>
+					<div class="register">
+						<h1>Sign Up</h1>
+						<hr/>
+						<br/>
+						<form 
+							ref='createuser' 
+							id='createuser'						
+							action="http://localhost:3000/create-user" 
+							method='post'
+							class="reg_cont">
+							<label for="fname">First Name</label>
+							<input type="text" id="fname" name="fname" >
+							<label for="lname">Last Name</label>
+							<input type="text" id="lname" name="lname" >
+							<label for="reg_email">Email Address</label>
+							<input type="text" id="reg_email" name="reg_email" >
+							<label for="reg_pass">Password</label>
+							<input type="password" id="reg_pass" name="reg_pass" >
+							<label for="reg_conf">Confirm Password</label>
+							<input type="password" id="reg_conf" name="reg_conf" >
+							<label for="phone">Contact number</label>
+							<input type="text" id="phone" name="phone" >
+							<input type="submit" value="REGISTER">
+						</form>
+						
+						
+					</div>
+				</div>
+			</article>
+			<footer>
+				<div class="footer_content">
+					<ul>
+						<li><div class="foot_logo">
+							<img class="foot_logo_dim" border="0" alt="GoMovies" src="img\logo1.png">
+						</div>
+						</li>
+						<li>
+							<div class= "footer_doc">
+								<ul>
+									<li>Documentation</li>
+									<li>Support/Contact us</li>
+									<li>Registry Status</li>
+									<li>Website Issues</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</footer>
