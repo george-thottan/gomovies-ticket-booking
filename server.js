@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var crypto = require('crypto');
 var mysql= require('mysql');
+var async      = require('async');
 var session= require('express-session');
 var connection = mysql.createConnection({
   host: 'localhost',
@@ -30,19 +31,50 @@ app.get('/', function(req, res){
 });
 app.get('/movies',function(req, res){
 	if(req.session && req.session.auth && req.session.auth.userId){
-		var runnin=1;
-		
+		/*var runnin=1;
+
 		connection.query("SELECT * from movies where status=?",[runnin],function(err,results){
 		if (err) throw err;
 		if(results.length>0){
-			
+
 			res.render('movie',{results: results});}
 		else{
 			console.log("Not found");
 			res.status(404);
 			res.send('srry');
 		  }
-	  });
+	  });*/
+    var runnin=1;
+    var not_runnin=0;
+
+    var query1 = "SELECT * from movies where status=?";
+    var query2 = "SELECT * from movies where status=?";
+
+    var return_data = {};
+
+    async.parallel([
+       function(parallel_done) {
+           connection.query(query1, runnin, function(err, results) {
+               if (err) return parallel_done(err);
+               return_data.table1 = results;
+               parallel_done();
+           });
+       },
+       function(parallel_done) {
+           connection.query(query2, not_runnin, function(err, results) {
+               if (err) return parallel_done(err);
+               return_data.table2 = results;
+               parallel_done();
+           });
+       }
+    ], function(err) {
+         if (err) console.log(err);
+
+         res.render('movie',return_data);
+    });
+
+
+
 	}//res.render('movie',{layout : "scndry"});
 	else{
 		res.send("Please do login");
@@ -79,13 +111,13 @@ app.post('/create-user',function(req,res){
 		else
 			res.send('success');
 	});
-    
+
 });
 
 app.post('/signin',function(req,res){
 	var sign_email= req.body.s_email;
 	var sign_pass= req.body.s_pass;
-	
+
 	connection.query("SELECT * FROM members WHERE elmail=?",[sign_email],function(err, results){
 		if (err)
 			throw err;

@@ -4,7 +4,7 @@
 		<h1>Currently Playing :</h1>
 		<hr/>
 		<ul>
-			{{#each results}}
+			{{#each table1}}
 			<li style="float:left">
 				<a href="#">
 					<div>
@@ -17,24 +17,23 @@
 			</li>
 			{{/each}}
 		</ul>
-		<br>
-		<hr/>
-		<br>
+
 		<h1>Coming Soon :</h1>
 		<hr/>
 		<ul>
-			{{#each results1}}
+			{{#each table2}}
 			<li style="float:left">
-				<a href="#">
+				<div class="upcoming_movie">
 					<div>
 						<img class="movie_poster" src="http://localhost:3000/img/uploads/{{img}}" alt="Movie poster" border="0" height="300" width="200">
 					</div>
 					<div class="movie_name">
 						<b>{{name}}</b>
 					</div>
-				</a>
+				</div>
 			</li>
 			{{/each}}
 		</ul>
 	</div>
+	<br>
 </article>
