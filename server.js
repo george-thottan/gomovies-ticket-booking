@@ -27,7 +27,12 @@ app.use(session({
 	cookie:{maxAge:1000*60*60*24*30}
 }));
 app.get('/', function(req, res){
-	res.render('GoMovies',{layout : "main"});
+  if(req.session && req.session.auth && req.session.auth.userId){
+    res.redirect(303,'/movies');
+  }
+  else{
+	 res.render('GoMovies',{layout : "main"});
+ }
 });
 app.get('/movies',function(req, res){
 	if(req.session && req.session.auth && req.session.auth.userId){
@@ -69,25 +74,35 @@ app.get('/movies',function(req, res){
 	}
 });
 app.get('/register',function(req, res){
+  if(req.session && req.session.auth && req.session.auth.userId){
+    res.redirect(303,'/movies');
+  }
+  else{
 	res.render('register',{layout : "main"});
+  }
 });
 
 
 app.get('/movie-page/:id',function(req, res){
 
-  var id = req.params.id;
+  if(req.session && req.session.auth && req.session.auth.userId){
+    var id = req.params.id;
 
 
-  connection.query("SELECT * FROM movies WHERE mid=?",[id],function(err,results){
-    if (err) throw err;
-    if(results.length>0){
-      res.render('moviepage',{results: results});
-    }
-    else{
-      res.status(404);
-      res.send('srry');
-    }
-  });
+    connection.query("SELECT * FROM movies WHERE mid=?",[id],function(err,results){
+      if (err) throw err;
+      if(results.length>0){
+        res.render('moviepage',{results: results});
+      }
+      else{
+        res.status(404);
+        res.send('srry');
+      }
+    });
+  }
+  else {
+    res.send("please login");
+  }
 	//res.render('moviepage');
 });
 
