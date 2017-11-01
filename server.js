@@ -31,19 +31,7 @@ app.get('/', function(req, res){
 });
 app.get('/movies',function(req, res){
 	if(req.session && req.session.auth && req.session.auth.userId){
-		/*var runnin=1;
 
-		connection.query("SELECT * from movies where status=?",[runnin],function(err,results){
-		if (err) throw err;
-		if(results.length>0){
-
-			res.render('movie',{results: results});}
-		else{
-			console.log("Not found");
-			res.status(404);
-			res.send('srry');
-		  }
-	  });*/
     var runnin=1;
     var not_runnin=0;
 
@@ -85,8 +73,22 @@ app.get('/register',function(req, res){
 });
 
 
-app.get('/page',function(req, res){
-	res.render('moviepage');
+app.get('/movie-page/:id',function(req, res){
+
+  var id = req.params.id;
+
+
+  connection.query("SELECT * FROM movies WHERE mid=?",[id],function(err,results){
+    if (err) throw err;
+    if(results.length>0){
+      res.render('moviepage',{results: results});
+    }
+    else{
+      res.status(404);
+      res.send('srry');
+    }
+  });
+	//res.render('moviepage');
 });
 
 

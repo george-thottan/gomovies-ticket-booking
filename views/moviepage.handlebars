@@ -1,12 +1,24 @@
 <article>
-	<div class="movie_info_name">
-		<h1>Movie Name</h1>
-	</div>
-	<div class="movie_info_description">
-		<div >
-			<img class="movie_info_img" src="img\gomoviii.jpg" alt="Movie poster" border="0" height="300" width="200">
-		<div>
-		<div class="movie_info_details"><p>GoMovies is simple project to help you meet your movie-going needs. Wanna check out movies currently running in theaters, GoMovies is the place to be. Search for movies, theaters and book tickets for you and your family.</p>
+	<br>
+	{{#each results}}
+	<div class="movie_info">
+		<br>
+		<div class="movie_info_name">
+			<font size="6"><b>{{name}}</b></font>
+			<hr/>
+			<br>
 		</div>
-	</div>
+		<div class="movie_info_description">
+			<div >
+				<img class="movie_info_img" src="http://localhost:3000/img/uploads/{{img}}" alt="Movie poster" border="0" height="375" width="260">
+			</div>
+			<hr/>
+			<br>
+			<div class="movie_info_details"><p>{{abt}}</p>
+			</div>
+			<br>
+			<hr/>
+		 </div>
+	 </div>
+	 {{/each}}
 </article>
